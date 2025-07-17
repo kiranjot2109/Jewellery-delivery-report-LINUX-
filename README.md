@@ -1,1 +1,1 @@
-# Jewellery-delivery-report-LINUX-
+Jewellery Delivery report is the process of maintaining the records of purchased items by customers and creating its invoice. Jewellery Mania provides the process in which the report is made efficently along with item ID, item name and also with quantity demanded. Jewellery delivery report maintain the records online. Customers can buy jewellery items more than once in this project.
