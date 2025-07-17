@@ -1,0 +1,99 @@
+#!/bin/bash
+tput clear
+gtotal=0
+rm entries 2> err
+tput cup 0 0
+echo "******************************************************************************"
+tput cup 1 0
+echo "******************************************************************************"
+tput cup 4 29
+echo "Order Details"
+date1=`date +"%d-%m-%y"`
+echo $date1
+ ##########################################
+if [ ! -e master ]; then
+neworder="1001"
+else 
+ 
+ awk -F, 'length > NF+1' master | tail -1> tempsale
+ 
+cat tempsale
+read x
+
+t1=`cat tempsale`
+lastorderno=$(echo "$t1" | cut -d":" -f1)
+echo $lastorderno
+read x
+neworder=`expr $lastorderno + 1`
+echo $neworder
+fi
+echo $neworder
+###################
+
+cat price
+echo "press enter to start"
+read x
+while true
+do
+############
+#######################
+while true
+do
+echo "Enter item ID:"
+read no
+grep -i -w "^$no" price
+a=$?
+echo $a
+if [ $a -eq 1 ]; then
+echo "NO such item found"
+continue
+else
+break
+fi
+done
+#############################
+if [ $a -eq 0 ]; then
+grep -i -w "$no" price>temp1
+t=`cat temp1`
+#echo 4t
+#grep -v -w "^$no"price>temp2
+fi
+##############################
+#cat temp2>record1
+#############################
+no=$(echo "$t" | cut -d":" -f1)
+item=$(echo "$t" | cut -d":" -f2)
+price=$(echo "$t" | cut -d":" -f3)
+echo "$no"
+echo "$item"
+echo "$price"
+##############################
+echo "Enter quantity sold:"
+read sqty
+total=`expr $price \* $sqty`
+gtotal=`expr $gtotal + $total`
+echo "::$item:$sqty:$price:$total:$date1">>master
+echo "::$item:$sqty:$price:$total:$date1">>entries
+echo "Do you want to enter another sold item for same customer>>>(y/n)"
+read ch
+if [ $ch = "y" ]; then
+continue
+else
+break
+fi
+done
+#customerrrrrr
+echo "Enter customer name:"
+read nm
+echo "Enter customer Phone No.:"
+read num
+echo "Enter address:"
+read add
+echo "$nm:$num:$add">>entries
+######################
+
+echo "$neworder::::$gtotal">>master
+
+echo "$neworder::::$gtotal">>entries
+######################## 
+

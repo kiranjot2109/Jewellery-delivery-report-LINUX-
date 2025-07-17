@@ -1,0 +1,29 @@
+#!/bin/bash
+tput clear
+tput cup 0 0
+echo "******************************************************************************"
+tput cup 1 0
+echo "******************************************************************************"
+tput cup 20 0
+echo "******************************************************************************"
+tput cup 21 0
+echo "******************************************************************************"
+tput cup 6 20
+echo "PROJECT ON JEWELLERY DELIVERY REPORT"
+tput cup 10 8
+echo "Submitted To:"
+tput cup 12 8
+echo "Dr. Mohit K. Sharma(HOD)"
+tput cup 13 8
+echo "Ms. Simrat Kaur"
+tput cup 14 8
+echo "(Project Guide)"
+tput cup 10 55
+echo "Submitted By:"
+tput cup 12 55
+echo "Kiranjot Kaur(5207)"
+tput cup 13 55
+echo "Harnoor Kaur(5215)"
+tput cup 19 50
+echo "Press any key to continue..."
+read x

@@ -1,0 +1,43 @@
+#!/bin/bash
+tput clear
+tput cup 0 0
+echo "******************************************************************************"
+tput cup 1 0
+echo "******************************************************************************"
+tput cup 20 0
+echo "******************************************************************************"
+tput cup 21 0
+echo "******************************************************************************"
+tput cup 4 34
+echo "MENU"
+tput cup 7 30
+echo "1. Data Entry and Invoice"
+tput cup 9 30
+echo "2. Report"
+tput cup 11 30
+echo "3. About Us"
+tput cup 13 30
+echo "4. Exit"
+tput cup 16 30
+echo "Enter choice="
+tput cup 16 44
+read x
+case $x in
+1)
+sh
+;;
+2)
+tput clear
+sh
+;;
+3)
+tput clear
+sh aboutus
+bash ./menu
+;;
+*)
+sh thanks
+exit
+;;
+esac
+

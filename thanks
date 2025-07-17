@@ -1,0 +1,23 @@
+#!/bin/bash
+tput clear
+tput cup 0 0
+echo "******************************************************************************"
+tput cup 1 0
+echo "******************************************************************************"
+tput cup 20 0
+echo "******************************************************************************"
+tput cup 21 0
+echo "******************************************************************************"
+tput cup 3 33
+echo "THANKS"
+tput cup 6 35
+echo "FOR"
+tput cup 9 32
+echo "VISITING"
+tput cup 15 29
+echo "MSc IT(1st sem)"
+tput cup 16 23
+echo "J.C.D.A.V College, Dasuya."
+tput cup 19 50
+echo "Press any key to continue..."
+read x
